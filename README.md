@@ -2,7 +2,7 @@
 
 An interactive trip planner powered by **Groq AI** (llama-3.3-70b-versatile). Describe your trip in plain English and get a beautiful, editable day-by-day itinerary in seconds.
 
-![Trip Planner](./screenshot.png)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-trip--planner--phi--one.vercel.app-blue?style=for-the-badge&logo=vercel)](https://trip-planner-phi-one.vercel.app)
 
 ---
 
