@@ -11,24 +11,7 @@ const PORT = process.env.PORT || 3001;
 
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(express.json());
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://127.0.0.1:5173',
-  ...(process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
-];
-app.use(
-  cors({
-    origin: (origin, cb) => {
-      // Allow server-to-server calls (no origin) and known origins
-      if (!origin || allowedOrigins.includes(origin) || (process.env.CORS_ORIGIN === '*')) {
-        cb(null, true);
-      } else {
-        cb(new Error(`CORS: origin ${origin} not allowed`));
-      }
-    },
-    methods: ['GET', 'POST'],
-  })
-);
+app.use(cors());
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/api/ping', (_req, res) => {
