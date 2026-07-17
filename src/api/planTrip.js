@@ -12,7 +12,8 @@ export async function planTrip(prompt, signal) {
   let response;
 
   try {
-    response = await fetch('/api/plan-trip', {
+    const base = import.meta.env.VITE_API_URL ?? '';
+    response = await fetch(`${base}/api/plan-trip`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt }),
